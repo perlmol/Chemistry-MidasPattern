@@ -19,7 +19,9 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
         'Chemistry::Mol' => 0.24,
+        'Chemistry::MacroMol' => 0.05,
         'Chemistry::Pattern' => 0.20,
+        'Chemistry::File::PDB' => 0.15,
         'Test::Simple' => 0,
 
 COPYRIGHT AND LICENSE

@@ -17,8 +17,8 @@ Chemistry::File::MidasPattern - Wrapper Chemistry::File class for Midas patterns
     # define a pattern matching carbons alpha and beta
     # in all valine residues
     my $str  = ':VAL@CA,CB';
-    my $patt = Chemistry::MidasPattern->parse($str);
-    # Chemistry::Mol->parse($str) also works
+    my $patt = Chemistry::MidasPattern->parse($str, format => 'midas');
+    # Chemistry::Mol->parse($str, format => 'midas') also works
 
     # apply the pattern to the molecule
     $patt->match($mol);
@@ -36,6 +36,8 @@ Chemistry::Mol I/O interface. This allows Midas patterns to be used
 interchangeably with other pattern languages such as SMARTS in the context of
 programs such as L<mok>. All of the real work is done by
 L<Chemistry::MidasPattern>.
+
+This module register the 'midas' format with Chemistry::Mol.
 
 =cut
 
@@ -61,7 +63,8 @@ sub parse_string {
 
 =head1 SEE ALSO
 
-L<Chemistry::MidasPattern>, L<Chemistry::File>, L<Chemistry::Mol>.
+L<Chemistry::MidasPattern>, L<Chemistry::File>, L<Chemistry::Mol>,
+L<Chemistry::MacroMol>, L<mok>.
 
 The PerlMol website L<http://www.perlmol.org/>
 
@@ -76,7 +79,4 @@ software; you can redistribute it and/or modify it under the same terms as
 Perl itself.
 
 =cut
-
-
-1;
 

@@ -338,11 +338,11 @@ selectors first; for example
     :38 & :1-20 zr<10.0         atoms in residue 38 within 10 A of atoms
                                 in residues 1-20 (not so slow)
     
-In the first case, the N^2 search tries every atom in the molecule with every
-atom in residues 1-20, and then intersects the results with the atom list of
-residue 28; the second case only measures the distance between every atom in
-residue 38 with every atom in residues 1-20. The second way is much, much
-faster for large systems.
+In the first case, the N^2 search measures the distance between every atom in
+the molecule and every atom in residues 1-20, and then intersects the results
+with the atom list of residue 28; the second case only measures the distance
+between every atom in residue 38 with every atom in residues 1-20. The second
+way is much, much faster for large systems.
 
 Some day, a future version may implement a smarter algorithm...
 
