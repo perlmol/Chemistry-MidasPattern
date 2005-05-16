@@ -8,9 +8,14 @@ use Chemistry::File::MidasPattern;
 use Chemistry::File::PDB;
 use Data::Dumper;
 
+#$Chemistry::MidasPattern::DEBUG = 1;
 #my $patt = Chemistry::MidasPattern->new(shift || ':8@CA');
-my $str = shift || ':8@CA';
-my $mol = Chemistry::MacroMol->read(shift || "test2.pdb");
+unless (@ARGV == 2) {
+    die "usage: $0 <pattern> <file>\n";
+}
+
+my $str = shift;
+my $mol = Chemistry::MacroMol->read(shift);
 #my $patt = Chemistry::MidasPattern->parse($str, format => 'midas');
 my $patt = Chemistry::MidasPattern->new($str);
 #print Dumper $patt->{tree};
